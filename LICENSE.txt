@@ -1,4 +1,5 @@
    Copyright 2011-2012 Simon Massey (email my first name at my full name dot org)
+   Copyright 2012 Alexander Orlov <alexander.orlov@loxal.net>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

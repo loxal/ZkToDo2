@@ -6,6 +6,7 @@
     <jdbc-url>jdbc:mysql://goal:3306/dev</jdbc-url>
     <user-name>epvin</user-name>
     <user-password>dfeddfc4dfc5df9fdfc6dfc3dfd2dfc3</user-password>
+    <default-dialect>MySQL</default-dialect>
     <libraries>
       <library>
         <url>jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.21/mysql-connector-java-5.1.21.jar!/</url>
