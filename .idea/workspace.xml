@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e30722df-eaae-49de-9d3c-cf8dab14f0a8" name="Default" comment="+ new repo">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="e30722df-eaae-49de-9d3c-cf8dab14f0a8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="ZkToDo2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e30722df-eaae-49de-9d3c-cf8dab14f0a8" time="1352409991965" ignored="false" />
+    <file path="/Dummy.txt" changelist="e30722df-eaae-49de-9d3c-cf8dab14f0a8" time="1352410030415" ignored="false" />
     <file path="/ReminderRepository.java" changelist="e30722df-eaae-49de-9d3c-cf8dab14f0a8" time="1352409874868" ignored="false" />
     <file path="/manifest.yml" changelist="e30722df-eaae-49de-9d3c-cf8dab14f0a8" time="1352408719120" ignored="false" />
     <file path="/dataSourceContext.xml" changelist="e30722df-eaae-49de-9d3c-cf8dab14f0a8" time="1352407887301" ignored="false" />
@@ -270,7 +271,7 @@
       <file leaf-file-name="ReminderRepository.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/zkforge/zktodo2/ReminderRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="16" selection-start="744" selection-end="744" vertical-scroll-proportion="0.4407796">
+            <state line="21" column="30" selection-start="744" selection-end="744" vertical-scroll-proportion="0.4407796">
               <folding />
             </state>
           </provider>
@@ -886,7 +887,11 @@
       <created>1352409975771</created>
       <updated>1352409975771</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- workspace">
+      <created>1352410031338</created>
+      <updated>1352410031338</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -972,7 +977,7 @@
     <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ new repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="- workspace" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -993,6 +998,7 @@
     <MESSAGE value="* CloudFoundry update" />
     <MESSAGE value="* syntax error fix" />
     <MESSAGE value="+ new repo" />
+    <MESSAGE value="- workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1109,7 +1115,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkforge/zktodo2/ReminderRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="16" selection-start="744" selection-end="744" vertical-scroll-proportion="0.4407796">
+        <state line="21" column="30" selection-start="744" selection-end="744" vertical-scroll-proportion="0.4407796">
           <folding />
         </state>
       </provider>
