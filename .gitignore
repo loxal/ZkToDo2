@@ -1,3 +1,6 @@
+\.DS_Store
+/\.idea/workspace.xml
+
 target
 zktodo2.dat.log
 zktodo2.dat.properties
