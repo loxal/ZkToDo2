@@ -62,9 +62,14 @@
     <!--</bean>-->
 
     <!-- HSQLDB database for local junit testing -->
+    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"-->
+    <!--destroy-method="close" p:driverClassName="${database.driverClassName}" p:url="${jdbc.url}"-->
+    <!--p:username="${jdbc.username}" p:password="${jdbc.password}">-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-          destroy-method="close" p:driverClassName="${database.driverClassName}" p:url="${jdbc.url}"
-          p:username="${jdbc.username}" p:password="${jdbc.password}"/>
+          destroy-method="close" p:url="${jdbc.url}"
+          p:username="${jdbc.username}" p:password="${jdbc.password}">
+        <property name="driverClassName" value="${database.driverClassName}"/>
+    </bean>
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" p:dataSource-ref="dataSource">
         <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml"/>
