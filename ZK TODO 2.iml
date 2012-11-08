@@ -30,7 +30,7 @@
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/jbossAS7.datasource-context.xml</file>
           <file>file://$MODULE_DIR$/src/test/resources/dataSourceContext.xml</file>
           <file>file://$MODULE_DIR$/cloudfoundry/dburl-context.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/default.datasource-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/datasource-context.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -41,6 +41,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/.openshift" />
       <excludeFolder url="file://$MODULE_DIR$/target/production" />
       <excludeFolder url="file://$MODULE_DIR$/target/test" />
       <excludeFolder url="file://$MODULE_DIR$/target/zktodo2" />

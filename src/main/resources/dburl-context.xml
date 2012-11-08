@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    This spring context snippet simply pulls a db url out of the system properties.
+    See default.datasource-context.xml which uses that to setup a connection pool.
+    A different fragment coudl get the string out of jndi or some special file on the
+    server (hiding the password from developers). The web.xml puts the spring
+    snippets together.
+
+    DATABASE_URL should be set with either "-DDATABASE_URL=postgres://user:password@hostname/dbname"
+    else with an environment variable.
+    -->
+    <!--<bean class="java.net.URI" id="dbUrl">-->
+    <!--<constructor-arg value="${DATABASE_URL}" />-->
+    <!--</bean>-->
+
+    <bean class="java.net.URI" id="dbUrl">
+        <!--<constructor-arg value="${DATABASE_URL}" />-->
+        <!--<constructor-arg value="jdbc:mysql://dev.xsolut.de:3306/dev" />-->
+        <constructor-arg value="jdbc:mysql://goal:3306/dev"/>
+    </bean>
+
+</beans>
