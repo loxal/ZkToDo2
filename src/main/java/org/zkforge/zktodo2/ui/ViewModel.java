@@ -1,7 +1,8 @@
-package org.zkforge.zktodo2.ui;
+/*
+ * Copyright 2012 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
+ */
 
-import java.util.ArrayList;
-import java.util.List;
+package org.zkforge.zktodo2.ui;
 
 import org.zkforge.zktodo2.Reminder;
 import org.zkforge.zktodo2.ReminderService;
@@ -10,81 +11,85 @@ import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * This class demonstrates "Presentation Model" pattern as the binder is 
+ * This class demonstrates "Presentation Model" pattern as the binder is
  * pulling data through this class which holds the current user state of
- * interaction with the system services. This class also mediates the view's 
- * interaction the system services. 
- * 
+ * interaction with the system services. This class also mediates the view's
+ * interaction the system services.
+ * <p/>
  * {@see persentationmodel.zul}
- * 
- * {@link http://martinfowler.com/eaaDev/PresentationModel.html}
+ * <p/>
+ * http://martinfowler.com/eaaDev/PresentationModel.html
  */
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class) // wire with Spring
-public class ViewModel  {
-	
-	// auto-wired property
-	@WireVariable ReminderService reminderService = null;
-	
-	public ReminderService getReminderService() {
-		return reminderService;
-	}
+public class ViewModel {
 
-	public void setReminderService(ReminderService reminderService) {
-		this.reminderService = reminderService;
-	}
+  // auto-wired property
+  @WireVariable
+  ReminderService reminderService = null;
 
-	protected List<Reminder> reminders = new ArrayList<Reminder>();
-	
-	public List<Reminder> getReminders() {
-		List<Reminder> rs = this.reminderService.findAll();
-		this.reminders.clear();
-		this.reminders.addAll(rs);
-		return this.reminders;
-	}
+  public ReminderService getReminderService() {
+    return reminderService;
+  }
 
-	protected Reminder selectedReminder = new Reminder();
+  public void setReminderService(ReminderService reminderService) {
+    this.reminderService = reminderService;
+  }
 
-	public Reminder getSelectedReminder() {
-		return this.selectedReminder;
-	}
-	
-	@NotifyChange
-	public void setSelectedReminder(Reminder reminder) {
-		this.selectedReminder = reminder;
-	}
-	
-	@Command
-	@NotifyChange({"reminders","selectedReminder"})
-	public void delete() {
-		if( this.selectedReminder.getId() != null ){
-			try {
-				this.reminderService.delete(selectedReminder);
-				this.selectedReminder = new Reminder();
-			} catch (Exception e) {
-				e.printStackTrace(); // hum. someone else deleted this. should really send this up to the user and ask them to reload the page. 
-			}
-		}
-	}
+  protected List<Reminder> reminders = new ArrayList<Reminder>();
 
-	@Command
-	@NotifyChange({"reminders","selectedReminder"})
-	public void save() {
-		if( this.selectedReminder.getId() != null ){
-			try {
-				this.reminderService.persist(selectedReminder);
-			} catch (Exception e) {
-				e.printStackTrace(); // hum. someone else deleted this. should really send this up to the user and ask them to reload the page. 
-			}
-		} else {
-			this.reminderService.persist(this.selectedReminder);
-		}
-	}
-	
-	@Command
-	@NotifyChange({"reminders","selectedReminder"})
-	public void create() {
-		this.selectedReminder = new Reminder();
-	}
+  public List<Reminder> getReminders() {
+    List<Reminder> rs = this.reminderService.findAll();
+    this.reminders.clear();
+    this.reminders.addAll(rs);
+    return this.reminders;
+  }
+
+  protected Reminder selectedReminder = new Reminder();
+
+  public Reminder getSelectedReminder() {
+    return this.selectedReminder;
+  }
+
+  @NotifyChange
+  public void setSelectedReminder(Reminder reminder) {
+    this.selectedReminder = reminder;
+  }
+
+  @Command
+  @NotifyChange({"reminders", "selectedReminder"})
+  public void delete() {
+    if (this.selectedReminder.getId() != null) {
+      try {
+        this.reminderService.delete(selectedReminder);
+        this.selectedReminder = new Reminder();
+      } catch (Exception e) {
+        e.printStackTrace(); // hum. someone else deleted this. should really send this up to the user and ask them to reload the page.
+      }
+    }
+  }
+
+  @Command
+  @NotifyChange({"reminders", "selectedReminder"})
+  public void save() {
+    if (this.selectedReminder.getId() != null) {
+      try {
+        this.reminderService.persist(selectedReminder);
+      } catch (Exception e) {
+        e.printStackTrace(); // hum. someone else deleted this. should really send this up to the user and ask them to reload the page.
+      }
+    } else {
+      this.reminderService.persist(this.selectedReminder);
+    }
+  }
+
+  @Command
+  @NotifyChange({"reminders", "selectedReminder"})
+  public void create() {
+    this.selectedReminder = new Reminder();
+  }
 
 }
