@@ -1,13 +1,13 @@
 ---
 applications:
-#  zktodo2-cf.zip:
+  ./:
     name: epvin-lab
     framework:
       name: java_web
       info:
         mem: 512M
         description: Demo
-        exec: 
+        exec:
     runtime: java
 #    command: java $JAVA_OPTS jetty-runner-jmx.jar --port ${VCAP_APP_PORT} zktodo2.war
     url: epvin-lab.cloudfoundry.com
