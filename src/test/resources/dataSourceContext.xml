@@ -26,7 +26,7 @@
 
     <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">
         <property name="driverType">
-            <value>oracle.jdbc.driver.OracleDriver</value>
+            <value>${database.driverClassName}</value>
         </property>
         <property name="URL">
             <value>${jdbc.url}</value>
