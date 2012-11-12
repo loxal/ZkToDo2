@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2012 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
+  -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
@@ -20,7 +24,8 @@
     <bean class="java.net.URI" id="dbUrl">
         <!--<constructor-arg value="${DATABASE_URL}" />-->
         <!--<constructor-arg value="jdbc:mysql://dev.xsolut.de:3306/dev" />-->
-        <constructor-arg value="jdbc:mysql://goal:3306/dev"/>
+        <!--<constructor-arg value="jdbc:mysql://goal:3306/dev"/>-->
+        <constructor-arg value="jdbc:oracle:thin:@dev.xsolut.de:1523:demo"/>
     </bean>
 
 </beans>
