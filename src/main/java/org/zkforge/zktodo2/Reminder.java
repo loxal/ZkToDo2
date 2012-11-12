@@ -33,8 +33,7 @@ public class Reminder {
   private Date date = new Date(System.currentTimeMillis());
 
   public Reminder() {
-//    System.out.println("java.lang.System.getenv(\"VCAP_SERVICES\") = " + System.getenv("VCAP_SERVICES"));
-    Logger.getAnonymousLogger().log(Level.SEVERE, java.lang.System.getenv("VCAP_SERVICES"));
+    Logger.getLogger("MY_LOGGER").log(Level.INFO, java.lang.System.getenv("VCAP_SERVICES"));
   }
 
   public Reminder(String name, int priority, Date date) {
