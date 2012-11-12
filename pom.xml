@@ -8,8 +8,8 @@
     <groupId>org.zkforge.zktodo2</groupId>
     <artifactId>zktodo2</artifactId>
     <packaging>war</packaging>
-    <version>1.8.1</version>
-    <name>zktodo2</name>
+    <version>1.9.1</version>
+    <name>ToDo</name>
     <url>http://www.ibm.com/developerworks/websphere/zones/portal/proddoc/zkjavaajax/</url>
     <repositories>
         <repository>
@@ -215,16 +215,6 @@
     <build>
         <finalName>zktodo2</finalName>
         <plugins>
-            <!-- run jetty from eclipse or commandline with jmx enable for jconsole or StopJettyJmx.jar clean shutdown -->
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
-                <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <jettyConfig>src/etc/jetty-jmx.xml</jettyConfig>
-                </configuration>
-            </plugin>
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
