@@ -9,6 +9,8 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * The JPA entity which is rendered onto the screen.
@@ -31,6 +33,8 @@ public class Reminder {
   private Date date = new Date(System.currentTimeMillis());
 
   public Reminder() {
+//    System.out.println("java.lang.System.getenv(\"VCAP_SERVICES\") = " + System.getenv("VCAP_SERVICES"));
+    Logger.getAnonymousLogger().log(Level.SEVERE, java.lang.System.getenv("VCAP_SERVICES"));
   }
 
   public Reminder(String name, int priority, Date date) {
