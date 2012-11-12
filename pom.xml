@@ -33,20 +33,17 @@
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <geronimo-jta.version>1.1.1</geronimo-jta.version>
         <commons-lang.version>2.6</commons-lang.version>
-        <!--<bsh.version>2.0b4</bsh.version>-->
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
         <commons-io.version>2.4</commons-io.version>
         <servlet-api.version>2.4</servlet-api.version>
         <junit.version>4.10</junit.version>
         <concurrent.version>1.3.4</concurrent.version>
         <commons-lang.version>2.6</commons-lang.version>
-        <jetty.version>7.6.4.v20120524</jetty.version>
-        <!--<postgresql.version>8.4-702.jdbc3</postgresql.version>-->
         <commons-logging.version>1.1.1</commons-logging.version>
         <dom4j.version>1.6.1</dom4j.version>
         <jsr330.version>1</jsr330.version>
         <spring-data-jpa.version>1.2.0.RELEASE</spring-data-jpa.version>
-        <slf4j.version>1.6.1</slf4j.version>
+        <slf4j.version>1.6.2</slf4j.version>
     </properties>
     <dependencies>
         <dependency>
@@ -223,37 +220,6 @@
                     <jettyConfig>src/etc/jetty-jmx.xml</jettyConfig>
                 </configuration>
             </plugin>
-            <!-- we wish to run the project war with a jetty-runner which is jmx enabled so copy the required jars to the build output folder -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.mortbay.jetty</groupId>
-                                    <artifactId>jetty-runner</artifactId>
-                                    <version>${jetty.version}</version>
-                                    <destFileName>jetty-runner.jar</destFileName>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>org.eclipse.jetty</groupId>
-                                    <artifactId>jetty-jmx</artifactId>
-                                    <version>${jetty.version}</version>
-                                    <destFileName>jetty-jmx.jar</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- jetty-runner is not jmx enabled by default so repackage the jar with the required dependency -->
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>

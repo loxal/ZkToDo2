@@ -31,7 +31,6 @@ public class Reminder {
   private Date date = new Date(System.currentTimeMillis());
 
   public Reminder() {
-    //noop
   }
 
   public Reminder(String name, int priority, Date date) {
