@@ -17,27 +17,27 @@
         </property>
     </bean>
 
-    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">-->
-    <!--<property name="driverClassName" value="${database.driverClassName}"/>-->
-    <!--<property name="url" value="${jdbc.url}"/>-->
-    <!--<property name="username" value="${jdbc.username}"/>-->
-    <!--<property name="password" value="${jdbc.password}"/>-->
-    <!--</bean>-->
-
-    <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">
-        <property name="driverType">
-            <value>${database.driverClassName}</value>
-        </property>
-        <property name="URL">
-            <value>${jdbc.url}</value>
-        </property>
-        <property name="user">
-            <value>${jdbc.username}</value>
-        </property>
-        <property name="password">
-            <value>${jdbc.password}</value>
-        </property>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${database.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
+
+    <!--<bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">-->
+    <!--<property name="driverType">-->
+    <!--<value>${database.driverClassName}</value>-->
+    <!--</property>-->
+    <!--<property name="URL">-->
+    <!--<value>${jdbc.url}</value>-->
+    <!--</property>-->
+    <!--<property name="user">-->
+    <!--<value>${jdbc.username}</value>-->
+    <!--</property>-->
+    <!--<property name="password">-->
+    <!--<value>${jdbc.password}</value>-->
+    <!--</property>-->
+    <!--</bean>-->
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" p:dataSource-ref="dataSource">

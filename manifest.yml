@@ -1,7 +1,7 @@
 ---
 applications:
   ./:
-    name: epvin-lab-oracle
+    name: epvin-lab
     framework:
       name: java_web
       info:
@@ -10,9 +10,9 @@ applications:
         exec:
     runtime: java
 #    command: java $JAVA_OPTS jetty-runner-jmx.jar --port ${VCAP_APP_PORT} zktodo2.war
-    url: epvin-lab-oracle.cloudfoundry.com
+    url: epvin-lab.cloudfoundry.com
     mem: 512M
     instances: 1
-#    services:
-#      pg_zktodo2:
-#        type: mysql
+    services:
+      epvin:
+        type: mysql
