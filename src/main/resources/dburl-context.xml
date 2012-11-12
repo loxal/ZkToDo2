@@ -25,7 +25,7 @@
         <!--<constructor-arg value="${DATABASE_URL}" />-->
         <!--<constructor-arg value="jdbc:mysql://dev.xsolut.de:3306/dev" />-->
         <!--<constructor-arg value="jdbc:mysql://goal:3306/dev"/>-->
-        <constructor-arg value="jdbc:oracle:thin:@dev.xsolut.de:1523:demo"/>
+        <constructor-arg value="jdbc:oracle:thin:@dev.xsolut.de:1521:dev"/>
     </bean>
 
 </beans>

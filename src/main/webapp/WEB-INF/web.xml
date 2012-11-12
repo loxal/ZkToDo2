@@ -6,7 +6,7 @@
         "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app>
-    <display-name>zktodo2</display-name>
+    <display-name>ToDo</display-name>
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
@@ -27,9 +27,7 @@
     </listener>
     <!-- ZK -->
     <listener>
-        <listener-class>
-            org.zkoss.zk.ui.http.HttpSessionListener
-        </listener-class>
+        <listener-class>org.zkoss.zk.ui.http.HttpSessionListener</listener-class>
     </listener>
     <servlet>
         <servlet-name>zkLoader</servlet-name>
@@ -42,9 +40,7 @@
     </servlet>
     <servlet>
         <servlet-name>auEngine</servlet-name>
-        <servlet-class>
-            org.zkoss.zk.au.http.DHtmlUpdateServlet
-        </servlet-class>
+        <servlet-class>org.zkoss.zk.au.http.DHtmlUpdateServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>zkLoader</servlet-name>
