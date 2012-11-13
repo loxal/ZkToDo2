@@ -21,13 +21,13 @@
     <!--<constructor-arg value="${DATABASE_URL}" />-->
     <!--</bean>-->
 
-    <bean class="java.net.URI" id="dbUrl">
-        <!--<constructor-arg value="${DATABASE_URL}" />-->
-        <!--<constructor-arg value="jdbc:mysql://dev.xsolut.de:3306/dev" />-->
-        <!--<constructor-arg value="jdbc:mysql://goal:3306/dev"/>-->
-        <!--<constructor-arg value="jdbc:oracle:thin:@dev.xsolut.de:1521:dev"/>-->
-        <constructor-arg value="jdbc:oracle:thin:@idea.loxal.net:1521:dev"/>
-        <!--<constructor-arg value="jdbc:mysql://idea.loxal.net:3306/dev"/>-->
-    </bean>
+    <!--<bean class="java.net.URI" id="dbUrl">-->
+    <!--<constructor-arg value="${DATABASE_URL}" />-->
+    <!--<constructor-arg value="jdbc:mysql://dev.xsolut.de:3306/dev" />-->
+    <!--<constructor-arg value="jdbc:mysql://goal:3306/dev"/>-->
+    <!--<constructor-arg value="jdbc:oracle:thin:@dev.xsolut.de:1521:dev"/>-->
+    <!--<constructor-arg value="jdbc:oracle:thin:@idea.loxal.net:1521:dev"/>-->
+    <!--<constructor-arg value="jdbc:mysql://idea.loxal.net:3306/dev"/>-->
+    <!--</bean>-->
 
 </beans>

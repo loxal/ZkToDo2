@@ -11,16 +11,16 @@
     <version>2.0.0</version>
     <name>ToDo</name>
     <url>http://www.ibm.com/developerworks/websphere/zones/portal/proddoc/zkjavaajax/</url>
-    <repositories>
-        <repository>
-            <id>zk repository</id>
-            <url>http://mavensync.zkoss.org/maven2</url>
-        </repository>
-        <repository>
-            <id>intalio.org</id>
-            <url>http://www.intalio.org/public/maven2</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+    <!--<repository>-->
+    <!--<id>zk repository</id>-->
+    <!--<url>http://mavensync.zkoss.org/maven2</url>-->
+    <!--</repository>-->
+    <!--<repository>-->
+    <!--<id>intalio.org</id>-->
+    <!--<url>http://www.intalio.org/public/maven2</url>-->
+    <!--</repository>-->
+    <!--</repositories>-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <zk.version>6.5.0</zk.version>
@@ -186,12 +186,6 @@
             <version>${hsqldb.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>postgresql</groupId>-->
-        <!--<artifactId>postgresql</artifactId>-->
-        <!--<version>${postgresql.version}</version>-->
-        <!--&lt;!&ndash;<classifier />&ndash;&gt;-->
-        <!--</dependency>-->
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
@@ -212,127 +206,127 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>zktodo2</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <configuration>
-                            <tasks>
-                                <jar destfile="${project.build.directory}/jetty-runner-jmx.jar">
-                                    <zipfileset src="${project.build.directory}/dependency/jetty-jmx.jar"/>
-                                    <zipfileset src="${project.build.directory}/dependency/jetty-runner.jar"/>
-                                    <manifest>
-                                        <attribute name="Main-Class" value="org.mortbay.jetty.runner.Runner"/>
-                                    </manifest>
-                                </jar>
-                            </tasks>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.1</version>
-                <dependencies>
-                    <!--<dependency>-->
-                    <!--<groupId>org.kohsuke</groupId>-->
-                    <!--<artifactId>doxia-module-markdown</artifactId>-->
-                    <!--<version>1.0</version>-->
-                    <!--</dependency>-->
-                </dependencies>
-                <configuration>
-                    <inputEncoding>UTF-8</inputEncoding>
-                    <outputEncoding>UTF-8</outputEncoding>
-                    <generateReports>false</generateReports>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <profiles>
-        <profile>
-            <id>cloudfoundry</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <version>2.1.1</version>
-                        <configuration>
-                            <webResources>
-                                <resource>
-                                    <directory>${basedir}/cloudfoundry</directory>
-                                    <targetPath>WEB-INF/classes</targetPath>
-                                </resource>
-                            </webResources>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-antrun-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <configuration>
-                                    <tasks>
-                                        <jar destfile="${project.build.directory}/jetty-runner-jmx.jar">
-                                            <zipfileset src="${project.build.directory}/dependency/jetty-jmx.jar"/>
-                                            <zipfileset src="${project.build.directory}/dependency/jetty-runner.jar"/>
-                                            <manifest>
-                                                <attribute name="Main-Class" value="org.mortbay.jetty.runner.Runner"/>
-                                            </manifest>
-                                        </jar>
-                                        <zip destfile="${basedir}/zktodo2-cf.zip"
-                                             basedir="${project.build.directory}"
-                                             includes="jetty-runner-jmx.jar,zktodo2.war">
-                                        </zip>
-                                    </tasks>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>clean</id>
-                                <configuration>
-                                    <!--<task>-->
-                                    <!--<echo>Cleaning cloudfoundry zip in the root folder</echo>-->
-                                    <!--</task>-->
-                                    <tasks>
-                                        <delete file="${basedir}/zktodo2-cf.zip"/>
-                                    </tasks>
-                                </configuration>
-                                <phase>clean</phase>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-            <dependencies>
-                <!-- cloudfoundry dependency. found in intalio.org repo -->
-                <dependency>
-                    <groupId>org.intalio.cloudfoundry</groupId>
-                    <artifactId>vcapservices</artifactId>
-                    <version>${vcapservices.version}</version>
-                    <scope>compile</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
+    <!--<build>-->
+    <!--<finalName>zktodo2</finalName>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<artifactId>maven-antrun-plugin</artifactId>-->
+    <!--<executions>-->
+    <!--<execution>-->
+    <!--<phase>package</phase>-->
+    <!--<configuration>-->
+    <!--<tasks>-->
+    <!--<jar destfile="${project.build.directory}/jetty-runner-jmx.jar">-->
+    <!--<zipfileset src="${project.build.directory}/dependency/jetty-jmx.jar"/>-->
+    <!--<zipfileset src="${project.build.directory}/dependency/jetty-runner.jar"/>-->
+    <!--<manifest>-->
+    <!--<attribute name="Main-Class" value="org.mortbay.jetty.runner.Runner"/>-->
+    <!--</manifest>-->
+    <!--</jar>-->
+    <!--</tasks>-->
+    <!--</configuration>-->
+    <!--<goals>-->
+    <!--<goal>run</goal>-->
+    <!--</goals>-->
+    <!--</execution>-->
+    <!--</executions>-->
+    <!--</plugin>-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+    <!--<configuration>-->
+    <!--<source>1.6</source>-->
+    <!--<target>1.6</target>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-site-plugin</artifactId>-->
+    <!--<version>3.1</version>-->
+    <!--<dependencies>-->
+    <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
+    <!--&lt;!&ndash;<groupId>org.kohsuke</groupId>&ndash;&gt;-->
+    <!--&lt;!&ndash;<artifactId>doxia-module-markdown</artifactId>&ndash;&gt;-->
+    <!--&lt;!&ndash;<version>1.0</version>&ndash;&gt;-->
+    <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
+    <!--</dependencies>-->
+    <!--<configuration>-->
+    <!--<inputEncoding>UTF-8</inputEncoding>-->
+    <!--<outputEncoding>UTF-8</outputEncoding>-->
+    <!--<generateReports>false</generateReports>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</build>-->
+    <!--<profiles>-->
+    <!--<profile>-->
+    <!--<id>cloudfoundry</id>-->
+    <!--<build>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<artifactId>maven-war-plugin</artifactId>-->
+    <!--<version>2.1.1</version>-->
+    <!--<configuration>-->
+    <!--<webResources>-->
+    <!--<resource>-->
+    <!--<directory>${basedir}/cloudfoundry</directory>-->
+    <!--<targetPath>WEB-INF/classes</targetPath>-->
+    <!--</resource>-->
+    <!--</webResources>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--<plugin>-->
+    <!--<artifactId>maven-antrun-plugin</artifactId>-->
+    <!--<executions>-->
+    <!--<execution>-->
+    <!--<phase>package</phase>-->
+    <!--<configuration>-->
+    <!--<tasks>-->
+    <!--<jar destfile="${project.build.directory}/jetty-runner-jmx.jar">-->
+    <!--<zipfileset src="${project.build.directory}/dependency/jetty-jmx.jar"/>-->
+    <!--<zipfileset src="${project.build.directory}/dependency/jetty-runner.jar"/>-->
+    <!--<manifest>-->
+    <!--<attribute name="Main-Class" value="org.mortbay.jetty.runner.Runner"/>-->
+    <!--</manifest>-->
+    <!--</jar>-->
+    <!--<zip destfile="${basedir}/zktodo2-cf.zip"-->
+    <!--basedir="${project.build.directory}"-->
+    <!--includes="jetty-runner-jmx.jar,zktodo2.war">-->
+    <!--</zip>-->
+    <!--</tasks>-->
+    <!--</configuration>-->
+    <!--<goals>-->
+    <!--<goal>run</goal>-->
+    <!--</goals>-->
+    <!--</execution>-->
+    <!--<execution>-->
+    <!--<id>clean</id>-->
+    <!--<configuration>-->
+    <!--&lt;!&ndash;<task>&ndash;&gt;-->
+    <!--&lt;!&ndash;<echo>Cleaning cloudfoundry zip in the root folder</echo>&ndash;&gt;-->
+    <!--&lt;!&ndash;</task>&ndash;&gt;-->
+    <!--<tasks>-->
+    <!--<delete file="${basedir}/zktodo2-cf.zip"/>-->
+    <!--</tasks>-->
+    <!--</configuration>-->
+    <!--<phase>clean</phase>-->
+    <!--<goals>-->
+    <!--<goal>run</goal>-->
+    <!--</goals>-->
+    <!--</execution>-->
+    <!--</executions>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</build>-->
+    <!--<dependencies>-->
+    <!--&lt;!&ndash; cloudfoundry dependency. found in intalio.org repo &ndash;&gt;-->
+    <!--<dependency>-->
+    <!--<groupId>org.intalio.cloudfoundry</groupId>-->
+    <!--<artifactId>vcapservices</artifactId>-->
+    <!--<version>${vcapservices.version}</version>-->
+    <!--<scope>compile</scope>-->
+    <!--</dependency>-->
+    <!--</dependencies>-->
+    <!--</profile>-->
+    <!--</profiles>-->
 </project>
