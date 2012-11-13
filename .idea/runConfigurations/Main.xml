@@ -2,7 +2,7 @@
   <configuration default="false" name="Main" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
-      <artifact name="ToDo:Web exploded">
+      <artifact name="zktodo2:war exploded">
         <settings>
           <option name="CONTEXT_PATH" value="/" />
         </settings>
@@ -68,7 +68,7 @@
     </ConfigurationWrapper>
     <method>
       <option name="BuildArtifacts" enabled="true">
-        <artifact name="ToDo:Web exploded" />
+        <artifact name="zktodo2:war exploded" />
       </option>
     </method>
   </configuration>
